@@ -1,10 +1,7 @@
 package com.rkbapps.courseapp.entities;
 
-import org.springframework.data.annotation.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.IdClass;
 
 @Entity
 public class Courses {

@@ -2,8 +2,6 @@ package com.rkbapps.courseapp.services;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.rkbapps.courseapp.entities.Courses;
 
 public interface CourseServices {
