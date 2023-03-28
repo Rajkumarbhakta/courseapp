@@ -15,43 +15,40 @@ import com.rkbapps.courseapp.services.CourseServices;
 
 @RestController
 public class MyController {
-    
+
     @Autowired
     private CourseServices courseServices;
 
     @GetMapping("/home")
-    public String homeController(){
+    public String homeController() {
         return "Welcome to Spring Home";
     }
 
-
-    //* get all the courses */
+    // * get all the courses */
     @GetMapping("/courses")
-    public List<Courses> getAllCourses(){
+    public List<Courses> getAllCourses() {
 
         return courseServices.getCourses();
 
     }
 
-    //*get a single course */
+    // *get a single course */
     @GetMapping("/courses/{courseId}")
-    public Courses getCourse(@PathVariable long courseId){
+    public Courses getCourse(@PathVariable long courseId) {
 
         return courseServices.getCourse(courseId);
     }
 
-    //* add a new course */
+    // * add a new course */
     @PostMapping("/courses")
-    public Courses addNewCourse(@RequestBody Courses courses){
+    public Courses addNewCourse(@RequestBody Courses courses) {
         return courseServices.addCourse(courses);
     }
 
-    //*delete a course */
+    // *delete a course */
     @DeleteMapping("/courses/{courseId}")
-    public String removeCourse(@PathVariable long courseId ){
+    public String removeCourse(@PathVariable long courseId) {
         return courseServices.removeCourse(courseId);
     }
-
-
 
 }
