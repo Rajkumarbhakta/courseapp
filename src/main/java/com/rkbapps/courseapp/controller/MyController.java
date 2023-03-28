@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.rkbapps.courseapp.model.Courses;
+import com.rkbapps.courseapp.entities.Courses;
 import com.rkbapps.courseapp.services.CourseServices;
 
 @RestController
