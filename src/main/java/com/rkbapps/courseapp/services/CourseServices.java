@@ -2,7 +2,7 @@ package com.rkbapps.courseapp.services;
 
 import java.util.List;
 
-import com.rkbapps.courseapp.Dto.CourseDto;
+import com.rkbapps.courseapp.dto.CourseDto;
 import com.rkbapps.courseapp.entities.Courses;
 
 public interface CourseServices {

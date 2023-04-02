@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.rkbapps.courseapp.Dto.CourseDto;
 import com.rkbapps.courseapp.dao.CourseDao;
+import com.rkbapps.courseapp.dto.CourseDto;
 import com.rkbapps.courseapp.entities.Courses;
 
 @Service

@@ -1,4 +1,4 @@
-package com.rkbapps.courseapp.Dto;
+package com.rkbapps.courseapp.dto;
 
 import com.rkbapps.courseapp.entities.Courses;
 
