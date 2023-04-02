@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rkbapps.courseapp.Dto.CourseDto;
 import com.rkbapps.courseapp.entities.Courses;
 import com.rkbapps.courseapp.services.CourseServices;
 
 @RestController
-public class MyController implements Serializable{
+public class MyController implements Serializable {
 
     @Autowired
     private CourseServices courseServices;
@@ -36,14 +37,14 @@ public class MyController implements Serializable{
 
     // *get a single course */
     @GetMapping("/courses/{courseId}")
-    public Courses getCourse(@PathVariable long courseId) {
+    public CourseDto getCourse(@PathVariable long courseId) {
 
         return courseServices.getCourse(courseId);
     }
 
     // * add a new course */
     @PostMapping("/courses")
-    public Courses addNewCourse(@RequestBody Courses courses) {
+    public CourseDto addNewCourse(@RequestBody Courses courses) {
         return courseServices.addCourse(courses);
     }
 
@@ -53,10 +54,10 @@ public class MyController implements Serializable{
         return courseServices.removeCourse(courseId);
     }
 
-    //*Update a course */
+    // *Update a course */
 
     @PutMapping("/courses")
-    public Courses updateCourses(@RequestBody Courses courses) {
+    public CourseDto updateCourses(@RequestBody CourseDto courses) {
 
         return courseServices.updateCourse(courses);
 

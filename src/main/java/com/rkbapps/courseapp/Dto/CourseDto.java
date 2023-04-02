@@ -1,5 +1,7 @@
 package com.rkbapps.courseapp.Dto;
 
+import com.rkbapps.courseapp.entities.Courses;
+
 public class CourseDto {
 
     private long id;
@@ -50,5 +52,16 @@ public class CourseDto {
     public void setDuration(Double duration) {
         this.duration = duration;
     }
+
+
+
+    public static Courses courseDtoToCourses(CourseDto courseDto){
+        return new Courses(courseDto.getId(),courseDto.getTittle(),courseDto.getDescription(),courseDto.getDuration());
+    }
+
+    public static CourseDto coursesToCourseDto(Courses courses){
+        return new CourseDto(courses.getId(),courses.getTittle(),courses.getDescription(),courses.getDuration());
+    }
+
 
 }

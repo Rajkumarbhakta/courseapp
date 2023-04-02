@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rkbapps.courseapp.Dto.CourseDto;
 import com.rkbapps.courseapp.dao.CourseDao;
 import com.rkbapps.courseapp.entities.Courses;
 
@@ -29,7 +30,7 @@ public class CourseServiceImpl implements CourseServices {
     }
 
     @Override
-    public Courses getCourse(long id) {
+    public CourseDto getCourse(long id) {
 
         // for (Courses course : cList) {
 
@@ -38,19 +39,20 @@ public class CourseServiceImpl implements CourseServices {
         // }
 
         // }
-        Courses oneCourse = courseDao.getReferenceById(id);
-
-        return oneCourse;
+        if(this.courseDao.existsById(id)){
+            return CourseDto.coursesToCourseDto(this.courseDao.getReferenceById(id));
+        }else{
+            return new CourseDto();
+        }
+        
+        
 
     }
 
     @Override
-    public Courses addCourse(Courses courses) {
+    public CourseDto addCourse(Courses courses) {
         // cList.add(courses);
-
-        courseDao.save(courses);
-
-        return courses;
+        return CourseDto.coursesToCourseDto(courseDao.save(courses));
     }
 
     @Override
@@ -75,7 +77,7 @@ public class CourseServiceImpl implements CourseServices {
     }
 
     @Override
-    public Courses updateCourse(Courses courses) {
+    public CourseDto updateCourse(CourseDto courses) {
 
         // for (Courses c : cList) {
 
@@ -89,7 +91,7 @@ public class CourseServiceImpl implements CourseServices {
 
         // }
 
-        return courseDao.save(courses);
+        return CourseDto.coursesToCourseDto(courseDao.save(CourseDto.courseDtoToCourses(courses)));
     }
 
 }
