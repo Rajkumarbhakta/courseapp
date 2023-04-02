@@ -65,11 +65,9 @@ public class CourseServiceImpl implements CourseServices {
 
         // }
         // return "Failed";+
-        Courses entity;
-        entity = courseDao.getReferenceById(id);
 
-        if (entity != null) {
-            courseDao.delete(entity);
+        if (courseDao.existsById(id)) {
+            courseDao.deleteById(id);
             return "Success";
         } else
             return "Failed";

@@ -1,5 +1,6 @@
 package com.rkbapps.courseapp.controller;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import com.rkbapps.courseapp.entities.Courses;
 import com.rkbapps.courseapp.services.CourseServices;
 
 @RestController
-public class MyController {
+public class MyController implements Serializable{
 
     @Autowired
     private CourseServices courseServices;

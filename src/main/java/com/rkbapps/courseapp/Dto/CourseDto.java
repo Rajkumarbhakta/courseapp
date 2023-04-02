@@ -1,26 +1,18 @@
-package com.rkbapps.courseapp.entities;
+package com.rkbapps.courseapp.Dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+public class CourseDto {
 
-@Entity
-public class Courses {
-
-    @Id
-    @Column(name = "id")
     private long id;
-    @Column(name = "tittle")
-    private String tittle;
-    @Column(name = "description")
-    private String description;
-    @Column(name = "duration")
-    private Double duration;
 
-    public Courses() {
+    private String tittle;
+
+    private Double duration;
+    private String description;
+
+    public CourseDto() {
     }
 
-    public Courses(long id, String tittle, String description, Double duration) {
+    public CourseDto(long id, String tittle, String description, Double duration) {
         this.id = id;
         this.tittle = tittle;
         this.description = description;
